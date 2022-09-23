@@ -141,6 +141,11 @@ impl DiscreteWavelet {
     }
 }
 
+/*
+ * Allocate Wavelet struct and set its attributes
+ * name - (currently) a character codename of a wavelet family
+ * order - order of the wavelet (ie. coif3 has order 3)
+ */
 pub(crate) fn discrete_wavelet(name: WAVELET_NAME, order: usize) -> Option<DiscreteWavelet> {
     match name {
         /* Haar wavelet */
@@ -590,6 +595,9 @@ pub(crate) fn continuous_wavelet(name:WAVELET_NAME,order: usize) -> Option<Conti
     }
 }
 
+/*
+ * Allocate blank Discrete Wavelet with zero-filled filters of given length
+ */
 pub(crate) fn blank_discrete_wavelet(filters_length: usize) -> Option<DiscreteWavelet> {
     /* pad to even length */
     let mut filters_length = filters_length;

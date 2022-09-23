@@ -2,6 +2,9 @@ mod common;
 mod macro_wavelets;
 mod wavelets;
 mod wavelets_coeffs;
+mod convolution;
+mod cwt;
+
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right

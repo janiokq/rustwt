@@ -1,3 +1,4 @@
+#[derive(PartialEq)]
 pub enum MODE {
     MODE_INVALID = -1,
     MODE_ZEROPAD = 0, /* default, signal extended with zeros */
@@ -8,7 +9,7 @@ pub enum MODE {
                        * 2 3 3 2 1 | 1 2 3 | 3 2 1 1 2
                        */
     MODE_CONSTANT_EDGE, /* signal extended with the border value */
-    MODE_SSOMOOTH,      /* linear extrapolation (first derivative) */
+    MODE_SMOOTH,      /* linear extrapolation (first derivative) */
     MODE_PERIODIC,      /* signal is treated as being periodic */
     MODE_PERIODIZATION, /* signal is treated as being periodic, minimal output length   */
     MODE_REFLECT,       /* signal extended symmetrically (reflect)
@@ -17,7 +18,7 @@ pub enum MODE {
                          * reflect back and forth without repeating edge values:
                          * 1 2 3 2 | 1 2 3 | 2 1 2 3
                          */
-    MODE_ANTISYMMMETRIC, /* antisymmetric version of "MODE_SYMMETRIC"
+    MODE_ANTISYMMETRIC, /* antisymmetric version of "MODE_SYMMETRIC"
                           * also known as half-sample antisymmetric
                           * 2 3 -3 -2 -1 | 1 2 3 | -3 -2 -1 1 2
                           */
